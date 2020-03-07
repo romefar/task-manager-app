@@ -5,7 +5,7 @@ const jwt = require('jsonwebtoken');
 
 const Task = require('./task');
 
-const userSchema = new mongoose.Schema( {
+const userSchema = new mongoose.Schema({
     name : { 
         type : String,
         required : true,
@@ -45,6 +45,8 @@ const userSchema = new mongoose.Schema( {
             required : true
         }
     }]
+}, { 
+    timestamps : true
 });
 
 userSchema.virtual('tasks', { 
